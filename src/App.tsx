@@ -35,26 +35,11 @@ function App() {
       }}>
         <h1 style={{ color: '#D37D3D', fontSize: '1.2rem', margin: 0, fontWeight: '800' }}>DAVIES Local Voice Commerce</h1>
         
-        {/* Sélecteur de Langue (Boutons Pilotes) */}
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', marginTop: '12px' }}>
-          {['fr', 'en', 'bm'].map((l) => (
-            <button 
-              key={l}
-              onClick={() => setLangue(l as any)}
-              style={{
-                padding: '6px 12px',
-                borderRadius: '20px',
-                border: 'none',
-                backgroundColor: langue === l ? '#D37D3D' : '#E5E7EB',
-                color: langue === l ? '#fff' : '#4B5563',
-                fontSize: '0.8rem',
-                fontWeight: '600',
-                cursor: 'pointer'
-              }}
-            >
-              {l.toUpperCase()}
-            </button>
-          ))}
+        {/* Sélecteur de langue simple */}
+        <div style={{ marginTop: '15px', display: 'flex', justifyContent: 'center', gap: '10px' }}>
+          <button onClick={() => setLangue('fr')} style={{ border: langue === 'fr' ? '2px solid #D37D3D' : '1px solid #ccc', borderRadius: '5px', padding: '5px 10px', cursor: 'pointer' }}>🇫🇷 FR</button>
+          <button onClick={() => setLangue('en')} style={{ border: langue === 'en' ? '2px solid #D37D3D' : '1px solid #ccc', borderRadius: '5px', padding: '5px 10px', cursor: 'pointer' }}>🇬🇧 EN</button>
+          <button onClick={() => setLangue('bm')} style={{ border: langue === 'bm' ? '2px solid #D37D3D' : '1px solid #ccc', borderRadius: '5px', padding: '5px 10px', cursor: 'pointer' }}>🇲🇱 BM</button>
         </div>
       </header>
 
