@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div style={{ padding: '20px', maxWidth: '450px', margin: 'auto', fontFamily: 'Arial, sans-serif' }}>
-      <h1 style={{ color: '#1e40af', textAlign: 'center' }}>DAVIES SHOP</h1>
+      <h1 style={{ color: '#1e40af', textAlign: 'center' }}>DAVIES Local Voice Commerce</h1>
       <p style={{ textAlign: 'center', color: '#666' }}>Catalogue Connecté</p>
       <hr />
       
@@ -57,5 +57,5 @@ function App() {
   );
 }
 
-// CETTE LIGNE EST LA PLUS IMPORTANTE :
+// CETTE LIGNE EST LA PLUS IMPORTANTE :DAVIES LOCAL VOICE COMMERCE
 export default App;
