@@ -23,31 +23,68 @@ function App() {
   return (
     <div style={{ backgroundColor: '#F9FAFB', minHeight: '100vh', fontFamily: 'Inter, sans-serif' }}>
       
-      {/* Header Style App Mobile */}
+      {/* Header Style App Mobile (Comme dans image_2.png) */}
       <header style={{ 
         backgroundColor: '#fff', 
-        padding: '20px 15px', 
-        textAlign: 'center', 
-        boxShadow: '0 2px 10px rgba(0,0,0,0.05)',
+        padding: '15px', 
+        boxShadow: '0 2px 10px rgba(0,0,0,0.03)',
         position: 'sticky',
         top: 0,
         zIndex: 100
       }}>
-        <h1 style={{ color: '#D37D3D', fontSize: '1.2rem', margin: 0, fontWeight: '800' }}>DAVIES Local Voice Commerce</h1>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
+          <div style={{ color: '#D37D3D', fontWeight: '800', fontSize: '1.2rem' }}>DAVIES Local Voice</div>
+          <div style={{ display: 'flex', gap: '15px', color: '#6B7280' }}>
+            <span>👤</span> {/* Icône de profil fictive */}
+            <span>🔔</span> {/* Icône de notification fictive */}
+          </div>
+        </div>
         
-        {/* Sélecteur de langue simple */}
-        <div style={{ marginTop: '15px', display: 'flex', justifyContent: 'center', gap: '10px' }}>
-          <button onClick={() => setLangue('fr')} style={{ border: langue === 'fr' ? '2px solid #D37D3D' : '1px solid #ccc', borderRadius: '5px', padding: '5px 10px', cursor: 'pointer' }}>🇫🇷 FR</button>
-          <button onClick={() => setLangue('en')} style={{ border: langue === 'en' ? '2px solid #D37D3D' : '1px solid #ccc', borderRadius: '5px', padding: '5px 10px', cursor: 'pointer' }}>🇬🇧 EN</button>
-          <button onClick={() => setLangue('bm')} style={{ border: langue === 'bm' ? '2px solid #D37D3D' : '1px solid #ccc', borderRadius: '5px', padding: '5px 10px', cursor: 'pointer' }}>🇲🇱 BM</button>
+        {/* Barre de recherche fictive (Comme dans image_2.png) */}
+        <div style={{ position: 'relative', marginBottom: '15px' }}>
+          <span style={{ position: 'absolute', left: '12px', top: '10px', color: '#9CA3AF' }}>🔍</span>
+          <input 
+            type="text" 
+            placeholder="Rechercher des produits, artisans..." 
+            style={{
+              width: '100%',
+              padding: '10px 10px 10px 40px',
+              borderRadius: '25px',
+              border: '1px solid #E5E7EB',
+              backgroundColor: '#F3F4F6',
+              fontSize: '0.9rem'
+            }}
+          />
+        </div>
+
+        {/* Sélecteur de Langue (Boutons Pilotes) */}
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '8px' }}>
+          {['fr', 'en', 'bm'].map((l) => (
+            <button 
+              key={l}
+              onClick={() => setLangue(l as any)}
+              style={{
+                padding: '6px 12px',
+                borderRadius: '20px',
+                border: 'none',
+                backgroundColor: langue === l ? '#D37D3D' : '#E5E7EB',
+                color: langue === l ? '#fff' : '#4B5563',
+                fontSize: '0.8rem',
+                fontWeight: '600',
+                cursor: 'pointer'
+              }}
+            >
+              {l.toUpperCase()}
+            </button>
+          ))}
         </div>
       </header>
 
-      {/* Grille de Produits (Comme dans Rocket) */}
+      {/* Grille de Produits (Comme dans image_4.png) */}
       <main style={{ padding: '15px' }}>
         <div style={{ 
           display: 'grid', 
-          gridTemplateColumns: 'repeat(2, 1fr)', // 2 colonnes comme sur image_4.png
+          gridTemplateColumns: 'repeat(2, 1fr)', 
           gap: '12px' 
         }}>
           {produits.map((item, index) => (
@@ -58,7 +95,7 @@ function App() {
                 backgroundColor: '#fff',
                 borderRadius: '12px',
                 overflow: 'hidden',
-                boxShadow: '0 2px 5px rgba(0,0,0,0.05)',
+                boxShadow: '0 2px 5px rgba(0,0,0,0.02)',
                 display: 'flex',
                 flexDirection: 'column'
               }}
@@ -100,6 +137,11 @@ function App() {
           ))}
         </div>
       </main>
+      
+      {/* Footer minimaliste */}
+      <footer style={{ marginTop: '40px', padding: '20px', textAlign: 'center', fontSize: '0.75rem', color: '#aaa', backgroundColor: '#fff', borderTop: '1px solid #eee' }}>
+        &copy; 2026 DAVIES Collection - Bamako
+      </footer>
     </div>
   );
 }
