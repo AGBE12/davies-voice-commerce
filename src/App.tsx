@@ -33,7 +33,7 @@ function App() {
         top: 0,
         zIndex: 100
       }}>
-        <h1 style={{ color: '#D37D3D', fontSize: '1.2rem', margin: 0, fontWeight: '800' }}>DAVIES Local Voice</h1>
+        <h1 style={{ color: '#D37D3D', fontSize: '1.2rem', margin: 0, fontWeight: '800' }}>DAVIES Local Voice Commerce</h1>
         
         {/* Sélecteur de Langue (Boutons Pilotes) */}
         <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', marginTop: '12px' }}>
